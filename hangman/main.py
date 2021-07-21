@@ -9,6 +9,7 @@ def get_valid_word(words):
 
     return word
 
+lives = 6
 
 def hangman():
     word = get_valid_word(words)
@@ -16,14 +17,24 @@ def hangman():
     alphabet = set(string.ascii_uppercase)
     used_letters = set()
 
-    user_letter = input('Guess a letter: ').upper()
-    if user_letter in alphabet - used_letters:
-        used_letters.add(user_letter)
-        if user_letter in words_letters:
-            words_letters.remove(user_letter)
-    
-    elif user_letter in used_letters:
-        print('You have already used that character. Please try again.')
-    
-    else:
-        print('Invalid character. Please try again.')
+    # get user input 
+    while len(words_letters) > 0 and lives > 0:
+
+        print("You have ", lives, " lives left and you have used these letters: ", ' '.join(used_letters))
+
+        #show the current word i.e( W-SR- R)
+        word_list = [
+            
+        ]
+
+        user_letter = input('Guess a letter: ').upper()
+        if user_letter in alphabet - used_letters:
+            used_letters.add(user_letter)
+            if user_letter in words_letters:
+                words_letters.remove(user_letter)
+        
+        elif user_letter in used_letters:
+            print('You have already used that character. Please try again.')
+        
+        else:
+            print('Invalid character. Please try again.')
