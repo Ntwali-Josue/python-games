@@ -45,7 +45,7 @@ def hangman():
 
     #when len word == 0 and lives == 0
     if lives == 0:
-        print('You\ve run out of lives. The word was: ', word)
-    
+        print('You\'ve run out of lives. The word was: ', word)
+
     else:
         print("Yeaaass You've won, the word is: ", word)
