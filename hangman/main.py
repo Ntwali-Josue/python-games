@@ -6,7 +6,6 @@ def get_valid_word(words):
     word = random.choice(words)
     while '-' in word or ' ' in word:
         word = random.choice(words)
-
     return word
 
 lives = 6
@@ -49,3 +48,4 @@ def hangman():
 
     else:
         print("Yeaaass You've won, the word is: ", word)
+
