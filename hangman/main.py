@@ -32,9 +32,20 @@ def hangman():
             used_letters.add(user_letter)
             if user_letter in words_letters:
                 words_letters.remove(user_letter)
+
+            else:
+                lives = lives - 1 #remove one lives if guessed the wrong letter
+             
         
         elif user_letter in used_letters:
             print('You have already used that character. Please try again.')
         
         else:
             print('Invalid character. Please try again.')
+
+    #when len word == 0 and lives == 0
+    if lives == 0:
+        print('You\ve run out of lives. The word was: ', word)
+    
+    else:
+        print("Yeaaass You've won, the word is: ", word)
